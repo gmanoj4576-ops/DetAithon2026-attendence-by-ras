@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DETAlthon 2K26 | Attendance System</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- LEFT STICKER IMAGE (Money Heist ONLY) -->
+    <img src="moneyheist.png" class="side-image sticker left-img">
+
+    <!-- TOP HEADER -->
+    <div class="top-header">
+        <img src="RAS logo.jpeg" class="logo circle">
+
+        <div class="top-text">
+            <h2>IEEE Robotics & Automation Society</h2>
+        </div>
+
+        <img src="sb logo.jpeg" class="logo circle">
+    </div>
+
+    <!-- MAIN CARD -->
+    <div class="card shifted">
+        <h1>DET<span>AI</span>THON 2K26</h1>
+        <p class="tagline">Money Heist × Halloween Attendance System</p>
+
+        <div class="buttons">
+            <button onclick="openQR()">📸 Scan QR Attendance</button>
+            <button onclick="openManual()">✍ Manual Attendance</button>
+            <button onclick="openAttended()">📊 Attended Students</button>
+            <button onclick="openAllStudents()">📋 Total Students List</button>
+        </div>
+    </div>
+
+    <script>
+        function openQR() {
+            window.open("https://lens.google.com/");
+        }
+        function openManual() {
+            window.open("https://docs.google.com/forms/d/e/1FAIpQLSfCrk_xYuyihsnNzrk8wLCaZ5TJZiGce1zbZnHIGSzCSxmn-A/viewform");
+        }
+        function openAttended() {
+            window.open("https://docs.google.com/spreadsheets/d/1QFcLrLseOw7y9XcvJ-DgeaR-5X-W7OcCvTPAjjBoonw/edit?gid=1003170004");
+        }
+        function openAllStudents() {
+            window.open("https://docs.google.com/spreadsheets/d/124q695i8KkLMYx5Hjc-A-JgzFHjJ57kXEDoy2yuyN6g/edit");
+        }
+    </script>
+
+</body>
+
+</html>

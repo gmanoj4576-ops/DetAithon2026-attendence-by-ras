@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background: black;
+    overflow: hidden;
+}
+
+/* 🔴 LIVE BACKGROUND */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(180, 0, 0, 0.7), transparent 35%),
+        radial-gradient(circle at 80% 70%, rgba(255, 0, 0, 0.6), transparent 40%),
+        linear-gradient(120deg, #0b0000, #000000, #140000);
+    animation: fogMove 18s linear infinite;
+    z-index: -5;
+}
+
+body::after {
+    filter: blur(70px);
+    opacity: 0.85;
+    animation-duration: 28s;
+}
+
+@keyframes fogMove {
+    0% {
+        transform: translate(-10%, -10%) scale(1.1);
+    }
+
+    50% {
+        transform: translate(10%, 10%) scale(1.35);
+    }
+
+    100% {
+        transform: translate(-10%, -10%) scale(1.1);
+    }
+}
+
+/* 🎭 STICKER IMAGE */
+.side-image {
+    position: absolute;
+    top: 55%;
+    width: 260px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.sticker {
+    filter:
+        drop-shadow(0 0 10px rgba(255, 0, 0, 0.9)) drop-shadow(0 0 30px rgba(255, 0, 0, 0.6));
+    animation: floatSticker 6s ease-in-out infinite;
+}
+
+.left-img {
+    left: 20px;
+    transform: translateY(-50%) rotate(-5deg);
+}
+
+@keyframes floatSticker {
+    0% {
+        transform: translateY(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateY(-50%) translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(-50%) translateY(0);
+    }
+}
+
+/* 🔝 HEADER */
+.top-header {
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    z-index: 2;
+}
+
+.logo.circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 3px solid #ffcc66;
+    object-fit: cover;
+}
+
+.top-text h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffcc66;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* 📦 CARD (SHIFTED LEFT) */
+.card {
+    position: absolute;
+    top: 58%;
+    background: rgba(0, 0, 0, 0.88);
+    padding: 40px;
+    width: 500px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(255, 0, 0, 0.6);
+    z-index: 2;
+}
+
+/* move card left */
+.card.shifted {
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
+/* TITLE */
+.card h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 52px;
+    color: #e50914;
+    letter-spacing: 3px;
+}
+
+.card h1 span {
+    color: white;
+}
+
+.tagline {
+    color: #ddd;
+    margin: 12px 0 25px;
+}
+
+/* BUTTONS */
+.buttons button {
+    width: 100%;
+    margin: 12px 0;
+    padding: 16px;
+    font-size: 17px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #b00000, #e50914);
+    color: white;
+    cursor: pointer;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+    .side-image {
+        width: 180px;
+        left: 50%;
+        top: 30%;
+        transform: translateX(-50%);
+    }
+
+    .card.shifted {
+        left: 50%;
+        width: 90%;
+        top: 65%;
+    }
+
+    .top-text h2 {
+        font-size: 18px;
+        text-align: center;
+    }
+}
